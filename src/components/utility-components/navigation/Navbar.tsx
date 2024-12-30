@@ -2,19 +2,26 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md fixed top-0 w-full z-50">
+    <nav className="bg-white dark:bg-neutral-900 shadow-md fixed top-0 w-full z-50">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
         {/* Logo */}
         <Link
           href="/"
           className="text-xl font-bold text-gray-700 dark:text-gray-200"
         >
-          Logo
+          <Image
+            src="/surge-bolt-logo.jpg"
+            width={60}
+            height={60}
+            alt="app logo"
+            className="rounded border-b-[0.02px] border-gray-700"
+          />
         </Link>
 
         {/* Hamburger Icon */}
@@ -51,7 +58,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-md">
+        <div className="md:hidden bg-white dark:bg-neutral-900 shadow-md">
           <div className="flex flex-col space-y-4 py-4 px-4">
             <Link
               href="/feed"
